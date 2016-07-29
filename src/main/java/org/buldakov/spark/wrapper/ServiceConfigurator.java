@@ -15,13 +15,20 @@ public class ServiceConfigurator {
 
     private final Service service;
     private final ActionInvocationResolver resolver;
+    private final List<Object> controllers;
+    private final ResponseTransformer transformer;
 
-    public ServiceConfigurator(Service service, ActionInvocationResolver resolver) {
+    public ServiceConfigurator(Service service, ActionInvocationResolver resolver,
+                               List<Object> controllers,
+                               ResponseTransformer transformer)
+    {
         this.service = service;
         this.resolver = resolver;
+        this.controllers = controllers;
+        this.transformer = transformer;
     }
 
-    public void init(List<Object> controllers, ResponseTransformer transformer) {
+    public void init() {
 
         List<ActionDescriptor> actionDescriptors = controllers.stream()
                 .flatMap(controller -> resolver.resolve(controller).stream())

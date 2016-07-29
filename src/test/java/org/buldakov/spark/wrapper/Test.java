@@ -52,8 +52,8 @@ public class Test {
                 .build();
         Service service = Service.ignite();
 
-        ServiceConfigurator configurator = new ServiceConfigurator(service, resolver);
-        configurator.init(Collections.singletonList(test));
+        ServiceConfigurator configurator = new ServiceConfigurator(service, resolver, Collections.singletonList(test), Object::toString);
+        configurator.init();
     }
 
     static class Pojo {
