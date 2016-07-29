@@ -2,6 +2,7 @@ package org.buldakov.spark.bindings;
 
 import org.buldakov.spark.bindings.actions.ActionDescriptor;
 import org.buldakov.spark.bindings.actions.ActionInvocationResolver;
+import spark.ResponseTransformer;
 import spark.ResponseTransformerRouteImpl;
 import spark.Service;
 
@@ -18,7 +19,7 @@ public class ServiceConfigurator {
         this.resolver = resolver;
     }
 
-    public void init(List<Object> controllers) {
+    public void init(List<Object> controllers, ResponseTransformer transformer) {
         List<ActionDescriptor> actionDescriptors = controllers.stream()
                 .flatMap(controller -> resolver.resolve(controller).stream())
                 .collect(Collectors.toList());
@@ -27,7 +28,7 @@ public class ServiceConfigurator {
             System.out.println("Registered: " + descriptor.getHttpMethod().name() + " " + descriptor.getPath());
             service.addRoute(descriptor.getHttpMethod().name(),
                     ResponseTransformerRouteImpl.create(descriptor.getPath(), descriptor.getInvocation().getRoute(),
-                            Object::toString));
+                            transformer));
         }
     }
 }
