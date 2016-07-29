@@ -1,7 +1,7 @@
-package org.buldakov.spark.bindings.binders;
+package org.buldakov.spark.wrapper.binders;
 
-import org.buldakov.spark.bindings.annotations.PathParam;
-import org.buldakov.spark.bindings.parameters.MethodParameter;
+import org.buldakov.spark.wrapper.annotations.PathParam;
+import org.buldakov.spark.wrapper.parameters.MethodParameter;
 import spark.Request;
 
 public class PathParameterBinder implements ParameterBinder {

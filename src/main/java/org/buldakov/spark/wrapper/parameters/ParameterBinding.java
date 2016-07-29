@@ -1,7 +1,7 @@
-package org.buldakov.spark.bindings.parameters;
+package org.buldakov.spark.wrapper.parameters;
 
-import org.buldakov.spark.bindings.binders.ParameterBinder;
-import org.buldakov.spark.bindings.converters.TypeConverter;
+import org.buldakov.spark.wrapper.binders.ParameterBinder;
+import org.buldakov.spark.wrapper.converters.TypeConverter;
 
 public class ParameterBinding {
 

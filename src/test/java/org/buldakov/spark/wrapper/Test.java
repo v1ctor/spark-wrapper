@@ -1,14 +1,14 @@
-package org.buldakov.spark.bindings;
+package org.buldakov.spark.wrapper;
 
-import org.buldakov.spark.bindings.actions.ActionInvocationResolver;
-import org.buldakov.spark.bindings.annotations.Action;
-import org.buldakov.spark.bindings.annotations.ActionController;
-import org.buldakov.spark.bindings.annotations.Body;
-import org.buldakov.spark.bindings.annotations.GetParam;
-import org.buldakov.spark.bindings.annotations.HeaderParam;
-import org.buldakov.spark.bindings.annotations.PathParam;
-import org.buldakov.spark.bindings.converters.TypeConverter;
-import org.buldakov.spark.bindings.parameters.MethodParameter;
+import org.buldakov.spark.wrapper.actions.ActionInvocationResolver;
+import org.buldakov.spark.wrapper.annotations.Action;
+import org.buldakov.spark.wrapper.annotations.ActionController;
+import org.buldakov.spark.wrapper.annotations.Body;
+import org.buldakov.spark.wrapper.annotations.GetParam;
+import org.buldakov.spark.wrapper.annotations.HeaderParam;
+import org.buldakov.spark.wrapper.annotations.PathParam;
+import org.buldakov.spark.wrapper.converters.TypeConverter;
+import org.buldakov.spark.wrapper.parameters.MethodParameter;
 import spark.Service;
 
 import java.util.Collections;

@@ -1,16 +1,16 @@
-package org.buldakov.spark.bindings.actions;
+package org.buldakov.spark.wrapper.actions;
 
-import org.buldakov.spark.bindings.parameters.ParameterBinding;
-import org.buldakov.spark.bindings.annotations.Action;
-import org.buldakov.spark.bindings.annotations.ActionController;
-import org.buldakov.spark.bindings.binders.BodyParameterBinder;
-import org.buldakov.spark.bindings.binders.GetParameterBinder;
-import org.buldakov.spark.bindings.binders.HeaderParameterBinder;
-import org.buldakov.spark.bindings.binders.ParameterBinder;
-import org.buldakov.spark.bindings.binders.PathParameterBinder;
-import org.buldakov.spark.bindings.converters.PrimitiveTypeConverter;
-import org.buldakov.spark.bindings.converters.TypeConverter;
-import org.buldakov.spark.bindings.parameters.MethodParameter;
+import org.buldakov.spark.wrapper.parameters.ParameterBinding;
+import org.buldakov.spark.wrapper.annotations.Action;
+import org.buldakov.spark.wrapper.annotations.ActionController;
+import org.buldakov.spark.wrapper.binders.BodyParameterBinder;
+import org.buldakov.spark.wrapper.binders.GetParameterBinder;
+import org.buldakov.spark.wrapper.binders.HeaderParameterBinder;
+import org.buldakov.spark.wrapper.binders.ParameterBinder;
+import org.buldakov.spark.wrapper.binders.PathParameterBinder;
+import org.buldakov.spark.wrapper.converters.PrimitiveTypeConverter;
+import org.buldakov.spark.wrapper.converters.TypeConverter;
+import org.buldakov.spark.wrapper.parameters.MethodParameter;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

@@ -1,7 +1,7 @@
-package org.buldakov.spark.bindings.actions;
+package org.buldakov.spark.wrapper.actions;
 
-import org.buldakov.spark.bindings.parameters.ParameterBinding;
-import org.buldakov.spark.bindings.parameters.MethodParameter;
+import org.buldakov.spark.wrapper.parameters.ParameterBinding;
+import org.buldakov.spark.wrapper.parameters.MethodParameter;
 import spark.Route;
 
 import java.lang.reflect.Method;

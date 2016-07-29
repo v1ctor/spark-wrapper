@@ -1,6 +1,6 @@
-package org.buldakov.spark.bindings.converters;
+package org.buldakov.spark.wrapper.converters;
 
-import org.buldakov.spark.bindings.parameters.MethodParameter;
+import org.buldakov.spark.wrapper.parameters.MethodParameter;
 
 public interface TypeConverter<T> {
 

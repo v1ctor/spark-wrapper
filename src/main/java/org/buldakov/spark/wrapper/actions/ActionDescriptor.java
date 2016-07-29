@@ -1,4 +1,4 @@
-package org.buldakov.spark.bindings.actions;
+package org.buldakov.spark.wrapper.actions;
 
 import spark.route.HttpMethod;
 

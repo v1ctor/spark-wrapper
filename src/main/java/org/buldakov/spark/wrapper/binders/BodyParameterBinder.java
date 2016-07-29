@@ -1,7 +1,7 @@
-package org.buldakov.spark.bindings.binders;
+package org.buldakov.spark.wrapper.binders;
 
-import org.buldakov.spark.bindings.annotations.Body;
-import org.buldakov.spark.bindings.parameters.MethodParameter;
+import org.buldakov.spark.wrapper.annotations.Body;
+import org.buldakov.spark.wrapper.parameters.MethodParameter;
 import spark.Request;
 
 public class BodyParameterBinder implements ParameterBinder {

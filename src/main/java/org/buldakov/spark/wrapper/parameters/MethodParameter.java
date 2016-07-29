@@ -1,4 +1,4 @@
-package org.buldakov.spark.bindings.parameters;
+package org.buldakov.spark.wrapper.parameters;
 
 import java.lang.annotation.Annotation;
 import java.util.NoSuchElementException;
