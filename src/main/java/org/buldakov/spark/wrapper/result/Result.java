@@ -1,6 +1,6 @@
 package org.buldakov.spark.wrapper.result;
 
-public class Result<T> {
+public class    Result<T> {
 
     private final int code;
     private final T value;

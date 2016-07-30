@@ -2,12 +2,16 @@ package org.buldakov.spark.wrapper.actions;
 
 import org.buldakov.spark.wrapper.parameters.ParameterBinding;
 import org.buldakov.spark.wrapper.parameters.MethodParameter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import spark.Route;
 
 import java.lang.reflect.Method;
 import java.util.List;
 
 public class ActionInvocation {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ActionInvocation.class);
 
     private final Object obj;
     private final Method method;
@@ -28,7 +32,12 @@ public class ActionInvocation {
                 Object convertedValue = binding.getConverter().convert(parameter, value);
                 args[parameter.getIndex()] = convertedValue;
             });
-            return method.invoke(obj, args);
+            try {
+                return method.invoke(obj, args);
+            } catch (Exception e) {
+                LOGGER.error("Error binding methd params ", e);
+                throw e;
+            }
         };
     }
 

@@ -1,6 +1,5 @@
 package org.buldakov.spark.wrapper.actions;
 
-import org.buldakov.spark.wrapper.parameters.ParameterBinding;
 import org.buldakov.spark.wrapper.annotations.Action;
 import org.buldakov.spark.wrapper.annotations.ActionController;
 import org.buldakov.spark.wrapper.binders.BodyParameterBinder;
@@ -11,6 +10,9 @@ import org.buldakov.spark.wrapper.binders.PathParameterBinder;
 import org.buldakov.spark.wrapper.converters.PrimitiveTypeConverter;
 import org.buldakov.spark.wrapper.converters.TypeConverter;
 import org.buldakov.spark.wrapper.parameters.MethodParameter;
+import org.buldakov.spark.wrapper.parameters.ParameterBinding;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -23,6 +25,8 @@ import java.util.Optional;
 import java.util.Set;
 
 public class ActionInvocationResolver {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ActionInvocationResolver.class);
 
     private final List<TypeConverter<?>> converters;
     private final List<ParameterBinder> binders;
@@ -60,7 +64,8 @@ public class ActionInvocationResolver {
             Optional<TypeConverter<?>> typeConverter = converters.stream()
                     .filter(converter -> converter.canHandle(methodParameter)).findFirst();
             if (!typeConverter.isPresent()) {
-                //TODO unknown param
+                LOGGER.error(obj.getClass().getName() + "." + method.getName() + ": Can't resolve constructor for type "
+                        + type.getName());
                 continue;
             }
 
@@ -68,7 +73,8 @@ public class ActionInvocationResolver {
                     .filter(binder -> binder.canHandle(methodParameter)).findFirst();
 
             if (!parameterBinder.isPresent()) {
-                //TODO unknown param
+                LOGGER.error(obj.getClass().getName() + "." + method.getName() + ": Can't resolve constructor for type "
+                        + type.getName());
                 continue;
             }
 
