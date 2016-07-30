@@ -1,7 +1,6 @@
 package org.buldakov.spark.wrapper.actions;
 
 import org.buldakov.spark.wrapper.annotations.Action;
-import org.buldakov.spark.wrapper.annotations.ActionController;
 import org.buldakov.spark.wrapper.binders.BodyParameterBinder;
 import org.buldakov.spark.wrapper.binders.GetParameterBinder;
 import org.buldakov.spark.wrapper.binders.HeaderParameterBinder;
@@ -18,7 +17,6 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -37,10 +35,6 @@ public class ActionInvocationResolver {
     }
 
     public List<ActionDescriptor> resolve(Object obj) {
-        ActionController annotation = obj.getClass().getAnnotation(ActionController.class);
-        if (annotation == null) {
-            return Collections.emptyList();
-        }
         List<ActionDescriptor> descriptors = new ArrayList<>();
         for (Method method : obj.getClass().getMethods()) {
             Action action = method.getAnnotation(Action.class);

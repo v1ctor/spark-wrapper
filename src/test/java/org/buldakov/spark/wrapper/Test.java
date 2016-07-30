@@ -2,7 +2,6 @@ package org.buldakov.spark.wrapper;
 
 import org.buldakov.spark.wrapper.actions.ActionInvocationResolver;
 import org.buldakov.spark.wrapper.annotations.Action;
-import org.buldakov.spark.wrapper.annotations.ActionController;
 import org.buldakov.spark.wrapper.annotations.Body;
 import org.buldakov.spark.wrapper.annotations.GetParam;
 import org.buldakov.spark.wrapper.annotations.HeaderParam;
@@ -13,7 +12,6 @@ import spark.Service;
 
 import java.util.Collections;
 
-@ActionController
 public class Test {
 
     @Action("/test1")
